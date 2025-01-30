@@ -1,0 +1,30 @@
+#root{
+    width: 100%;
+    height: 100vh;
+}
+
+.contenedor{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 6rem auto 10rem;
+    gap: 0.4rem;
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+.div-header{
+    grid-column: 1/3;
+}
+.div-progreso{
+    grid-column: 1/2;
+    grid-row: 2/3;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+}
+.div-tablero{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.div-footer{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
