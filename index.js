@@ -31,3 +31,14 @@ contenedor.appendChild(divTablero);
 contenedor.appendChild(divFooter);
 
 DOM.appendChild(contenedor);
+
+
+//EVENTO PARA TODAS LAS CARTAS
+let todasLasCartasDelDOM = document.querySelectorAll('.c-item');
+todasLasCartasDelDOM.forEach(cadaCarta => {
+
+    cadaCarta.addEventListener("click", ()=>{
+        cadaCarta.classList.add("vuelta-carta");
+    })
+
+})
