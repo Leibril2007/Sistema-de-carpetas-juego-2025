@@ -1,5 +1,5 @@
 import { cargarCartas } from "./components/tablero/tablero.js";
-
+import { segHeader } from "./components/header/header.js";
 
 let DOM = document.querySelector("#root");
 
@@ -9,6 +9,8 @@ contenedor.className = "contenedor";
 
 let divHeader = document.createElement('div');
 divHeader.className = "div-header";
+divHeader.appendChild(segHeader);
+
 
 let divFooter = document.createElement('div');
 divFooter.className = "div-footer";

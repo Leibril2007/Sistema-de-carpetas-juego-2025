@@ -18,15 +18,7 @@ function cargarCartas() {
 
     return div;
 }
-function resetearCartas() {
-    localStorage.removeItem("cartas"); 
-    location.reload(); 
-}
 
-let botonReset = document.createElement("button");
-botonReset.textContent = "Reiniciar Juego";
-botonReset.onclick = resetearCartas;
-document.body.appendChild(botonReset);
 
 export { cargarCartas };
 
