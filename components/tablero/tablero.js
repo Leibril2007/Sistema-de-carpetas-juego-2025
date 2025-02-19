@@ -1,41 +1,17 @@
-import { todas_las_cartas } from "./data.js";
+import { cartas } from "./data.js";
+import { cartaTablero} from "./itemCarta.js";
+import { mesclarCartas, obtenerCartas } from "./funcionesCartas.js";
 
-function item(Contenido) {
-    let div = document.createElement('div');
-    div.className = "c-item";
+function cargarTablero(){
 
-    let carta = document.createElement('div');
-    carta.className = "carta volteada"; // Añadimos la clase 'volteada' para que todas estén volteadas al inicio
+    let divTablero = document.createElement('div');
+    divTablero.className = "div-tablero";
 
-    let caraFrente = document.createElement('div');
-    caraFrente.className = "cara cara-frente";
-    caraFrente.textContent = Contenido;
+    let cartasObtenidas = obtenerCartas(cartas);
+    let cartasMezcladas = mesclarCartas(cartasObtenidas); 
+    divTablero.appendChild(cartaTablero(cartasMezcladas, cartasMezcladas));
 
-    let caraDetras = document.createElement('div');
-    caraDetras.className = "cara cara-detras";
-    caraDetras.textContent = "";
-
-    carta.appendChild(caraFrente);
-    carta.appendChild(caraDetras);
-
-    carta.addEventListener('click', () => {
-        carta.classList.toggle('volteada');
-    });
-
-    div.appendChild(carta);
-
-    return div;
+    return divTablero;
 }
 
-function cargarCartas() {
-    let div = document.createElement('div');
-    div.className = "div-tablero1";
-
-    todas_las_cartas.forEach((letra) => {
-        div.appendChild(item(letra));
-    });
-
-    return div;
-}
-
-export { cargarCartas };
+export { cargarTablero };
